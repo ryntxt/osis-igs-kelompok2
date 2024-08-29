@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Unna font web imbed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn{
+            0%{
+                opacity: 0;
+            }
+            60%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .main{
+            animation: fadeIn 3.5s;
+        }
+        .slider-container{
+            width: 100vw;
+        }
+        @keyframes intoPage{
+           from{
+            width: 80%;
+            left: 10%;
+            top: 10%;
+            opacity: 0.8;
+           }
+           to{
+            width: 100%;
+            left: 0;
+            top: 0;
+            opacity: 1;
+           }
+        }
+        .slides-data{
+            width: 100%;
+            padding: 0;
+            left: 0;
+            height: 117vh;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            animation: intoPage 0.2s ease-in ;
+
+        }
+        #PrevButton, #NextButton{
+            font-size: 200%;
+            gap: 200px;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            user-select: none;
+            cursor: pointer;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgba(0, 0, 0, 1);
+        }
+        #PrevButton{
+            position: absolute;
+            top: 95vh;
+            left: 25vw;
+        }
+        #NextButton{
+            position: absolute;
+            top: 95vh;
+            right: 25vw;
+        }
+        .slide-buttons b:hover{
+            color: rgb(160, 160, 160);
+             
+        }
+        .background-0{
+            width: 100%;
+            padding: 0;
+            left: 0;
+            height: 117vh;
+            position: absolute;
+            top: 0;
+            background-color: rgb(39, 39, 39);
+        }
+        .background-0 img{
+            width: 100%;
+            opacity: 0.3;
+        }
+        .slide-buttons2 {
+            position: absolute;
+            top: 112.2vh;
+            left: 46.8%;
+            z-index: 1;
+        }
+
+        .slide-buttons2-numbers {
+            position: absolute;
+            top: 112vh;
+            left: 46.8%;
+        }
+
+        .slide-buttons2-numbers button {
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            z-index: 0;
+            padding: 0 4.25px;
+            border-color: rgba(0, 0, 0, 0);
+            text-decoration: underline;
+
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.4s ease;
+        }
+
+        .active {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        .header-title{
+            font-size: 300%;
+            color: #e5d9fc;
+            text-shadow:0 0 20px #fff, 0 0 30px #9f269d;
+            position: absolute;
+            top: 1.8%;
+            left: 44%;
+        }
+        .header-back{
+            font-size: 200%;
+            color: #e5d9fc;
+            text-shadow:0 0 20px #fff, 0 0 30px #26429f;
+            position: absolute;
+            top: 3%;
+            left: 2%;
+            transition: text-shadow 0.5s, color 0.5s;
+        }
+        .header-back:hover{
+            font-size: 200%;
+            color: #b5dec5;
+            text-shadow:0 0 20px #fff, 0 0 30px #086453;
+            position: absolute;
+            top: 3%;
+            left: 2%;
+        }
+        .header-background{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            height: 80px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.443);
+        }
+        @keyframes openAnim{
+            0%{
+                top: 0;
+            }
+            60%{
+                top: 0;
+            }
+            100%{
+                top: -2000px;
+            }
+        }
+        .openingAnim{
+            width: 100%;
+            position: absolute;
+            top: -2000px;
+            left: 0;
+            z-index: 2;
+            animation: openAnim 3.5s;
+        }
+        .openingAnim img {
+            width: 100%;
+            height: 100vh;
+        }
+        @keyframes textIn{
+            from{
+                font-size: 10px;
+                top: -75vh;
+            }
+            to{
+                font-size: 100px;
+                top: -77vh;
+            }
+        }
+        @keyframes textIn2{
+            from{
+                font-size: 10px;
+                top: 8vh;
+              
+            }
+            to{
+                font-size: 36.5px;
+                top: -79vh;
+                
+            }
+        }
+        .unna-regular {
+            font-family: "Unna", serif;
+            font-weight: 600;
+            font-style: normal;
+            box-sizing: border-box;
+            letter-spacing: -2px;
+            font-size: 100px;
+            text-align: center;
+            position: relative;
+            top: -77vh;
+            color: #ffffff;
+            text-shadow:0 0 20px #fff, 0 0 30px #9f269d,  0 0 20px #fff, 0 0 30px #9f269d;
+            animation: textIn 1s;
+        }
+        .unna-regular2{
+            font-family: "Unna", serif;
+            font-weight: 600;
+            font-style: normal;
+            text-align: center;
+            position: relative;
+            top: -79vh;
+            font-size: 36.5px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.75);
+            animation: textIn2 1s;
+        }
+        video{
+            height: 100vh;
+            margin-top: 80px;   
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="background-0">
+            <img src="assets/img/bg-masthead.jpg" alt="">
+        </div>
+        <div class="slider-container">
+            <div class="slides-data">
+            <video controls>
+            <source src="assets/img/video1.mp4" type="video/mp4" />
+             Error: Video tag is not supported
+        </video></div>
+            <div class="slides-data">
+            <video controls>
+            <source src="assets/img/video2.mp4" type="video/mp4" />
+             Error: Video tag is not supported
+        </video></div>
+            <div class="slides-data">
+                <video controls>
+            <source src="assets/img/video3.mp4" type="video/mp4" />
+             Error: Video tag is not supported
+        </video>
+            </div>
+            <div class="slides-data">
+                <video controls>
+            <source src="assets/img/video4.mp4" type="video/mp4" />
+             Error: Video tag is not supported
+        </video>
+            </div>
+        </div>
+            <b onclick="changeSlide(-1)" id="PrevButton">PREV</b>
+            <b onclick="changeSlide(1)" id="NextButton">NEXT</b>
+        <div class="slide-buttons2" style="text-align: center">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <div class="slide-buttons2-numbers">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+        </div>
+            <div class="header-background"></div>
+            <b class="header-title">VIDEOS</b>
+            <a href="index.html"><b class="header-back">B A C K</b></a>
+    </div>
+        <div class="openingAnim">
+            <img src="assets/img/bg-masthead.jpg" alt="">
+            <h1 class="unna-regular">RECAMTURE</h1>
+            <p class="unna-regular2">An Enchanted night awaits you!</p>
+        </div>
+    <script>
+        const container = document.querySelector(".slider-container");
+        const slides = document.getElementsByClassName('slides-data');
+        const dots = document.getElementsByClassName('dot');
+        let index = 1;
+
+        function changeSlide(n){
+            index += n;
+            if (index > slides.length){
+                index = 1;
+            }
+            if (index < 1){
+                index = slides.length;
+            }
+            for(i=0; i<slides.length; i++){
+                slides[i].style.display = 'none';
+                dots[i].className = "dot";
+            }
+            slides[index-1].style.display = "block"
+            dots[index - 1].className = "dot active";
+        }
+        function currentSlide(n){
+            for(i=0; i<slides.length; i++){
+                slides[i].style.display = 'none';
+                dots[i].className = "dot";
+            }
+            slides[n -1].style.display = "block"
+            dots[n - 1].className = "dot active";
+            index = n;
+        }
+
+        changeSlide(0);
+    </script>
+
+</body>
+</html>
