@@ -11,13 +11,18 @@
         <style>
              @keyframes openAnim{
             0%{
+                opacity: 1;
                 top: 0;
             }
             60%{
-                top: 0;
+                opacity: 0.95;
+            }
+            70%{
+                opacity: 0.8;
             }
             100%{
-                top: -2000px;
+                opacity: 0;
+                top: 0;
             }
         }
         .openingAnim{
@@ -39,7 +44,7 @@
             }
             to{
                 font-size: 100px;
-                top: -65vh;
+                top: -68vh;
             }
         }
         @keyframes textIn2{
@@ -50,7 +55,7 @@
             }
             to{
                 font-size: 36.5px;
-                top: -62vh;
+                top: -62.8vh;
                 
             }
         }
@@ -59,11 +64,11 @@
             font-weight: 600;
             font-style: normal;
             box-sizing: border-box;
-            letter-spacing: -2px;
+            letter-spacing: 0;
             font-size: 100px;
             text-align: center;
             position: relative;
-            top: -65vh;
+            top: -68vh;
             color: #ffffff;
             text-shadow:0 0 20px #fff, 0 0 30px #9f269d,  0 0 20px #fff, 0 0 30px #9f269d;
             animation: textIn 1s;
@@ -74,7 +79,8 @@
             font-style: normal;
             text-align: center;
             position: relative;
-            top: -62vh;
+            top: -62.8vh;
+            letter-spacing: 0.04vw;
             font-size: 36.5px;
             font-weight: bold;
             color: rgba(255, 255, 255, 0.75);
